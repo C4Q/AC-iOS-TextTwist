@@ -8,5 +8,33 @@
 
 import Foundation
 
-class TextTwistModel {
+struct TheWord {
+    var wordData: TestTwistInfo
+    var wordCount: Int
+    var possibleLetters: String
+    var possibleWords: [String] = []
+    
+    init() {
+        let randomizer = Int(arc4random_uniform(3))
+        let randomIndex = WordData.allInfo[randomizer]
+        wordData = randomIndex
+        wordCount = wordData.wordCount
+        possibleLetters = wordData.letters
+        possibleWords = wordData.words
+    }
 }
+
+class TextTwistModel {
+    
+    var currentWord = TheWord()
+    
+    func checkInputAgainstPossibleWords(_ string: String) -> Bool {
+        return currentWord.possibleWords.contains(string)
+    }
+    
+    enum GuessResult: String {
+        case correct = "You guessed correctly!"
+        case incorrect = "You guessed incorrectly!"
+    }
+}
+
