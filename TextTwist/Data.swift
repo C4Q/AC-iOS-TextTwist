@@ -15,7 +15,7 @@ struct TestTwistInfo {
 }
 
 
-class WordData {
+struct WordData {
     static let allInfo: [TestTwistInfo] = [
         TestTwistInfo(wordCount: 27,
                       letters: "cdenno",
@@ -27,6 +27,13 @@ class WordData {
                       letters: "hisswy",
                       words: ["swishy", "hissy","swish", "hiss","whys","wish","wiss","ywis", "his","shy","sis","why","wis"])
     ]
+    
+//    let randWordGroup = Int(arc4random_uniform(3))
+//    let randWord = Int(arc4random_uniform(UInt32(allInfo[randWordGroup].wordCount - 1)))
+//
+//    func getRandomWord(list: [TestTwistInfo]) -> String {
+//        return list[randWordGroup].words[randWord]
+//    }
 }
     /*
     static let allInfo2: [TestTwistInfo] = [
