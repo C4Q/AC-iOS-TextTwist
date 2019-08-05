@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if sample.checkGuess(sender.text!) {
             validationMessage.text = "Correct!"
             sortGuessIntoWordBank(sender.text!)
+            sender.text = ""
         } else {
             validationMessage.text = "Wrong! Try Again"
         }
@@ -37,7 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userGuess.delegate = self
+        self.userGuess.delegate = self
         validationMessage.text = ""
         showRandomLetters()
     }
@@ -65,7 +66,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         letterBank.text = sample.testCase.letters
     }
     
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let characterCountLimit = 6
+        let startingLength = userGuess.text?.count ?? 0
+        let lengthToAdd = string.count
+        let lengthToReplace = range.length
+        var allowedCharacters = CharacterSet(charactersIn: sample.testCase.letters)
+        let newLength = startingLength + lengthToAdd - lengthToReplace
+        
+        if let _ = string.rangeOfCharacter(from: allowedCharacters) {
+            return newLength <= characterCountLimit
+        }
+        return false
+    }
     
     
     
