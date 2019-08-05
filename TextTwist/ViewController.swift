@@ -9,6 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var lettersUsed: UILabel!
+    
+    var randomGame = WordData.allInfo.randomElement()!
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        lettersUsed.text = randomGame.letters
+        
+        print(randomGame)
+    }
 }
 

@@ -9,4 +9,6 @@
 import Foundation
 
 class TextTwistModel {
+    // use info of date to create the logic behind the game
+    
 }
