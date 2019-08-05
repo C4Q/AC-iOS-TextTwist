@@ -9,4 +9,9 @@
 import Foundation
 
 class TextTwistModel {
+    var testCase = WordData.allInfo.randomElement()!
+    
+    func checkGuess(_ guess: String) -> Bool {
+        return self.testCase.words.contains(guess.lowercased())
+    }
 }
