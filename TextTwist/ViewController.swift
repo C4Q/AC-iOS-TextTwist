@@ -12,11 +12,15 @@ class ViewController: UIViewController {
     var model = TextTwistModel()
     
     @IBOutlet var letterWords: [UITextView]!
-    
-    
     @IBOutlet weak var guess: UILabel!
     
     @IBAction func guesses(_ sender: UITextField) {
+        
+        for amtOfLetters in letterWords {
+            if amtOfLetters.tag == 3 {
+                amtOfLetters.text.append(sender.text!)
+            }
+        }
         
     }
     
