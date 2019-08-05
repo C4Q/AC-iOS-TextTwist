@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-class TextTwistModel {
+struct TestTwistInfo {
+    let wordCount: Int
+    let letters: String
+    let words: [String]
 }
