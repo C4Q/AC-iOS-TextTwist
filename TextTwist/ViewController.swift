@@ -2,13 +2,20 @@
 //  ViewController.swift
 //  TextTwist
 //
-//  Created by C4Q  on 10/23/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by Sunni Tang on 08/05/19.
+//  Copyright © 2019. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    
+    }
 }
 

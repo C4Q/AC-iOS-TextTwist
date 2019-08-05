@@ -1,9 +1,9 @@
 //
-//  Data.swift
+//  ViewController.swift
 //  TextTwist
 //
-//  Created by C4Q  on 10/23/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by Sunni Tang on 08/05/19.
+//  Copyright © 2019. All rights reserved.
 //
 
 import Foundation
@@ -27,6 +27,11 @@ class WordData {
                       letters: "hisswy",
                       words: ["swishy", "hissy","swish", "hiss","whys","wish","wiss","ywis", "his","shy","sis","why","wis"])
     ]
+
+    func chooseRandomInfo() -> TestTwistInfo {
+        let randomInfo = WordData.allInfo.randomElement()!
+        return randomInfo
+    }
 }
     /*
     static let allInfo2: [TestTwistInfo] = [
