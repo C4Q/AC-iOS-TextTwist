@@ -17,7 +17,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var userGuess: String = ""
     var wordCheck: Bool = false
-    var availableLetters: String = gameModel.allWords.letters
     
     
     
@@ -34,48 +33,57 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func guessWords(_ sender: UITextField) {
         
         if let senderText = sender.text {
+            
             wordCheck = gameModel.checkGuess(userGuess: senderText)
             userGuess = senderText
-            checkForErrors()
-            addWordToBank()
-        } else {
-            label.text = "Must guess a word!"
-        }
-        textField.text = ""
-    }
-    
-    func addWordToBank() {
-        if wordCheck {
-            //also check to see if letter outside of letters is used
-            label.text = "Nice! Keep guessing."
-            if userGuess.count == 3 {
-                //add to 3 word bank
-                wordBanks[0].text = wordBanks[0].text + "\n" + userGuess
-            } else if userGuess.count == 4 {
-                // add to 4 word bank
-                wordBanks[1].text = wordBanks[1].text + "\n" + userGuess
-            } else if userGuess.count == 5 {
-                // add to 5 word bank
-                wordBanks[2].text = wordBanks[2].text + "\n" + userGuess
-            } else if userGuess.count == 6 {
-                // add to 6 word bank
-                wordBanks[3].text = wordBanks[3].text + "\n" + userGuess
+            gameModel.guessedWords.insert(userGuess)
+            
+            if wordCheck && !gameModel.isDuplicate() {
+                label.text = "Nice! Keep guessing."
+            
+                switch userGuess.count {
+                case 3:
+                    wordBanks[0].text = wordBanks[0].text + "\n" + userGuess
+                case 4:
+                    wordBanks[1].text = wordBanks[1].text + "\n" + userGuess
+                case 5:
+                    wordBanks[2].text = wordBanks[2].text + "\n" + userGuess
+                case 6:
+                    wordBanks[3].text = wordBanks[3].text + "\n" + userGuess
+                default:
+                    fatalError("This shouldn't happen!")
+                }
+            } else if wordCheck && gameModel.isDuplicate() {
+                label.text = "You already guessed that word!"
             } else {
-                // this will not happen
-                print("This should not happen")
+                label.text = "Nope. Try again!"
             }
+            
         } else {
-            label.text = "Nope. Try again!"
+            
+            label.text = "Must guess a word!"
+            
         }
+        
+        textField.text = ""
+        
     }
     
-    func checkForErrors() {
-//only let user type letters in the letter bank
-        //        userGuess
-//        availableLetters
-        
-        
-    }
+    
+//    func checkForErrors() {
+////only let user type letters in the letter bank
+//        let userGuessArray = Array(userGuess)
+//        var lettersLeft = [String]()
+//
+//        for char in userGuessArray {
+//            if availableLetters.contains(char) {
+//
+//            }
+//        }
+//    }
+    
+    
+    
     
     
 }

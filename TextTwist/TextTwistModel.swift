@@ -9,20 +9,23 @@
 import Foundation
 
 class TextTwistModel {
-    var userGuess: String = ""
+    var userGuess = String()
     var allWords = dataModel.chooseRandomInfo()
+    var guessedWords = Set<String>()
+    var typingLetters = String()
+    
     
     func checkGuess(userGuess: String) -> Bool {
-        if allWords.words.contains(userGuess) {
-            return true
-        } else {
-            return false
-        }
+        return allWords.words.contains(userGuess)
     }
     
     
+    func isDuplicate() -> Bool {
+        return guessedWords.contains(userGuess)
+    }
     
     
 }
 
 let gameModel = TextTwistModel()
+var availableLetters: String = gameModel.allWords.letters
