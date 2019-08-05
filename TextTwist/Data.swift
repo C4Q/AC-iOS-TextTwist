@@ -27,6 +27,11 @@ class WordData {
                       letters: "hisswy",
                       words: ["swishy", "hissy","swish", "hiss","whys","wish","wiss","ywis", "his","shy","sis","why","wis"])
     ]
+    func getRandom ()-> TestTwistInfo{
+     
+        let myWord = WordData.allInfo.randomElement()!
+          return myWord
+    }
 }
     /*
     static let allInfo2: [TestTwistInfo] = [

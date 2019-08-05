@@ -10,5 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func userInput(_ sender: UITextField) {
+        
+    }
+    
 }
 
