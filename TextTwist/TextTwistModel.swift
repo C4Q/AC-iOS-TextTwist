@@ -9,6 +9,22 @@
 import Foundation
 
 class TextTwistModel {
+    var userGuess: String
+    var allWords = dataModel.chooseRandomInfo()
     
+    init(userGuess: String) {
+        self.userGuess = userGuess
+    }
+    
+    
+    func makeGuess(userGuess: String) -> Bool {
+        if allWords.words.contains(userGuess) {
+            return true
+        } else {
+            return false
+        }
+        
+        
+    }
     
 }
