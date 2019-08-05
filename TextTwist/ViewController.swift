@@ -12,11 +12,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var availableLetters: UILabel!
+    @IBOutlet weak var availableLettersLabel: UILabel!
     @IBOutlet var wordBanks: [UITextView]!
     
     var userGuess: String = ""
     var wordCheck: Bool = false
+    var availableLetters: String = gameModel.allWords.letters
     
     
     
@@ -25,7 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         textField.delegate = self
         label.text = "Guess words by using the letters below:"
-        availableLetters.text = gameModel.allWords.letters
+        availableLettersLabel.text = availableLetters
     }
     
     
@@ -35,11 +36,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if let senderText = sender.text {
             wordCheck = gameModel.checkGuess(userGuess: senderText)
             userGuess = senderText
+            checkForErrors()
             addWordToBank()
         } else {
             label.text = "Must guess a word!"
         }
-        
+        textField.text = ""
     }
     
     func addWordToBank() {
@@ -64,9 +66,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         } else {
             label.text = "Nope. Try again!"
-
         }
-
+    }
+    
+    func checkForErrors() {
+//only let user type letters in the letter bank
+        //        userGuess
+//        availableLetters
+        
+        
     }
     
     
