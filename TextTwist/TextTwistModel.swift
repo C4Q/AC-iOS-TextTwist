@@ -9,13 +9,8 @@
 import Foundation
 
 class TextTwistModel {
-    var userGuess: String
+    var userGuess: String = ""
     var allWords = dataModel.chooseRandomInfo()
-    
-    init(userGuess: String) {
-        self.userGuess = userGuess
-    }
-    
     
     func checkGuess(userGuess: String) -> Bool {
         if allWords.words.contains(userGuess) {
@@ -23,8 +18,11 @@ class TextTwistModel {
         } else {
             return false
         }
-        
-        
     }
     
+    
+    
+    
 }
+
+let gameModel = TextTwistModel()
