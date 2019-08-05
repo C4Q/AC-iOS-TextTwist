@@ -24,6 +24,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="guessWords:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="LDz-K3-Dvo"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3 Letter Words" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN6-Zt-gNE">
                                 <rect key="frame" x="50" y="218" width="143" height="21"/>
@@ -60,21 +63,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-cQ-Aom">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oxr-cQ-Aom">
                                 <rect key="frame" x="222" y="247" width="143" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-rm-UH3">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m5v-rm-UH3">
                                 <rect key="frame" x="50" y="555" width="143" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-W4-tS0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" text="Text view" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="32z-W4-tS0">
                                 <rect key="frame" x="222" y="555" width="143" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,6 +95,14 @@
                         <color key="backgroundColor" red="0.97066909069999996" green="0.88912385770000002" blue="0.66265468309999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="NCL-bk-gVX" id="qNQ-XM-w4t"/>
+                        <outlet property="textField" destination="wat-6F-3ec" id="fJX-Gr-gny"/>
+                        <outletCollection property="wordBanks" destination="bag-ib-4Rz" collectionClass="NSMutableArray" id="OjS-Kt-hUN"/>
+                        <outletCollection property="wordBanks" destination="Oxr-cQ-Aom" collectionClass="NSMutableArray" id="OeG-9O-sEV"/>
+                        <outletCollection property="wordBanks" destination="m5v-rm-UH3" collectionClass="NSMutableArray" id="kP5-fS-b6q"/>
+                        <outletCollection property="wordBanks" destination="32z-W4-tS0" collectionClass="NSMutableArray" id="Bcp-E6-uWO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
