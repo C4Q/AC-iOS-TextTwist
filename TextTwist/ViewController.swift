@@ -9,14 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var model = TextTwistModel()
     
     @IBOutlet var letterWords: [UITextView]!
     
-
+    
+    @IBOutlet weak var guess: UILabel!
+    
     @IBAction func guesses(_ sender: UITextField) {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guess.text = model.generateTwist().letters
+    }
     
 
 }

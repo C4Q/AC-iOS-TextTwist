@@ -7,6 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class TextTwistModel {
+    
+    func generateTwist() -> TestTwistInfo {
+      return WordData.allInfo.randomElement()!
+    }
+    
 }

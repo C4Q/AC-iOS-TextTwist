@@ -31,7 +31,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word To Guess" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRT-AW-024" userLabel="wordToGuess">
                                 <rect key="frame" x="114" y="76" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -104,7 +104,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="guess" destination="HRT-AW-024" id="P4x-i6-AGG"/>
                         <outletCollection property="letterWords" destination="Er4-DK-xqh" collectionClass="NSMutableArray" id="Je6-uj-IjO"/>
+                        <outletCollection property="letterWords" destination="CBg-5E-QbR" collectionClass="NSMutableArray" id="aLX-ae-WiF"/>
+                        <outletCollection property="letterWords" destination="7Bx-yl-IFk" collectionClass="NSMutableArray" id="vU6-gG-ozk"/>
+                        <outletCollection property="letterWords" destination="UQC-se-XZ6" collectionClass="NSMutableArray" id="GOe-CO-UD9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
