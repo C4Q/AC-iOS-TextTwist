@@ -17,7 +17,7 @@ class TextTwistModel {
     }
     
     
-    func makeGuess(userGuess: String) -> Bool {
+    func checkGuess(userGuess: String) -> Bool {
         if allWords.words.contains(userGuess) {
             return true
         } else {
