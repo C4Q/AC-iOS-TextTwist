@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var wordBank = [String]()
     var userBank = [String]()
     var typedChars = String()
-    var charsToBeReplaced = String()
+    var charCount = 0
     
     @IBOutlet weak var lettersOutlet: UILabel!
     
@@ -32,33 +32,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func inputFieldTyped(_ sender: UITextField) {
-        
     }
     
     @IBAction func userIsTyping(_ sender: UITextField) {
-        
-            
-    
     }
+    
+    
+    
+    @IBAction func newGameButton(_ sender: UIButton) {
+        inputFieldOutlet.isEnabled = true
+        threeWordOutlet.text = ""
+        fourWordOutlet.text = ""
+        fiveWordOutlet.text = ""
+        sixWordOutlet.text = ""
+        info = WordData.allInfo.randomElement()!
+        lettersOutlet.text! = info.letters
+        wordBank = info.words
+        messageOutlet.text! = "Guess words using the letters above!"
+    }
+    
+    
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
         if lettersOutlet.text!.contains(string) {
+            charCount = lettersOutlet.text!.count
             lettersOutlet.text = lettersOutlet.text!.replacingOccurrences(of: string, with: "")
             typedChars.append(string)
+            
+            if charCount - lettersOutlet.text!.count != 1 {
+                lettersOutlet.text!.append(string)
+            }
+            
         }
         
         if string == "" {
-            
-            for i in typedChars {
-                if i == typedChars.last {
-                    lettersOutlet.text! += String(i)
-                }
+            if typedChars.isEmpty == false {
+            lettersOutlet.text! += String(typedChars.last!)
+                typedChars.popLast()
             }
-            typedChars.popLast()
             return true
         }
+        
+        
+        
         
         let characterSetAllowed = CharacterSet(charactersIn: "\(info.letters)")
 
@@ -87,21 +105,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     threeWordOutlet.text.append("\(input)\n" )
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
+                    if userBank.sorted() == wordBank.sorted() {
+                        messageOutlet.text! = "Congratulations! You guessed all the words!"
+                        inputFieldOutlet.isEnabled = false
+                    }
                     return true
                 } else if input.count == 4 && fourWordOutlet.text.contains(input.lowercased()) == false {
                     fourWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
+                    if userBank.sorted() == wordBank.sorted() {
+                        messageOutlet.text! = "Congratulations! You guessed all the words!"
+                        inputFieldOutlet.isEnabled = false
+                    }
                     return true
                 } else if input.count == 5 && fiveWordOutlet.text.contains(input.lowercased()) == false {
                     fiveWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
+                    if userBank.sorted() == wordBank.sorted() {
+                        messageOutlet.text! = "Congratulations! You guessed all the words!"
+                        inputFieldOutlet.isEnabled = false
+                    }
                     return true
                 } else if input.count == 6 && sixWordOutlet.text.contains(input.lowercased()) == false {
                     sixWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
+                    if userBank.sorted() == wordBank.sorted() {
+                        messageOutlet.text! = "Congratulations! You guessed all the words!"
+                        inputFieldOutlet.isEnabled = false
+                    }
                     return true
                 }
             }
@@ -124,7 +158,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         wordBank = info.words
         
-       
+        
     }
 }
 
