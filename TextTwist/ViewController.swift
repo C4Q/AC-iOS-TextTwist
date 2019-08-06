@@ -67,23 +67,53 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if string.isEmpty {
+            return true
+        }
+        
         let characterCountLimit = 6
         let startingLength = userGuess.text?.count ?? 0
         let lengthToAdd = string.count
         let lengthToReplace = range.length
-        var allowedCharacters = CharacterSet(charactersIn: sample.testCase.letters)
+        
         let newLength = startingLength + lengthToAdd - lengthToReplace
         
-        if let _ = string.rangeOfCharacter(from: allowedCharacters) {
-            return newLength <= characterCountLimit
+        if newLength <= characterCountLimit {
+            let allowedCharacters = CharacterSet(charactersIn: sample.testCase.letters)
+            if let rangeOfCharactersAllowed = string.rangeOfCharacter(from: allowedCharacters) {
+                let validCharacterCount = string.distance(from: rangeOfCharactersAllowed.lowerBound, to: rangeOfCharactersAllowed.upperBound)
+                adjustLetterBank(textField.text!)
+                return validCharacterCount <= string.count
+            } else {
+                return false
+            }
+        } else {
+            return false
         }
-        return false
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guessInput(userGuess)
+        return true
+    }
     
-    
-    
-    
-    
+    func adjustLetterBank(_ string: String) {
+        let userArr = [Character](string)
+        var originalArr = [Character](sample.testCase.letters)
+        var displayedLetterBank = ""
+        for c in userArr {
+            for (index, character) in originalArr.enumerated() {
+                if c == character {
+                    originalArr.remove(at: index)
+                    break
+                }
+            }
+        }
+        for c in originalArr {
+            displayedLetterBank += String(c)
+        }
+        letterBank.text = displayedLetterBank
+    }
 }
-
