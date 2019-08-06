@@ -16,7 +16,9 @@ struct TestTwistInfo {
 
 
 class WordData {
-    static let allInfo: [TestTwistInfo] = [
+    static let allInfo: [TestTwistInfo] =
+        
+        [
         
         TestTwistInfo(wordCount: 27,
                       letters: "cdenno",

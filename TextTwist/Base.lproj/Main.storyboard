@@ -105,10 +105,10 @@
                     </view>
                     <connections>
                         <outlet property="guess" destination="HRT-AW-024" id="P4x-i6-AGG"/>
-                        <outletCollection property="letterWords" destination="Er4-DK-xqh" collectionClass="NSMutableArray" id="Je6-uj-IjO"/>
-                        <outletCollection property="letterWords" destination="CBg-5E-QbR" collectionClass="NSMutableArray" id="aLX-ae-WiF"/>
-                        <outletCollection property="letterWords" destination="7Bx-yl-IFk" collectionClass="NSMutableArray" id="vU6-gG-ozk"/>
-                        <outletCollection property="letterWords" destination="UQC-se-XZ6" collectionClass="NSMutableArray" id="GOe-CO-UD9"/>
+                        <outletCollection property="letterWords" destination="UQC-se-XZ6" collectionClass="NSMutableArray" id="z8N-Zo-G7m"/>
+                        <outletCollection property="letterWords" destination="7Bx-yl-IFk" collectionClass="NSMutableArray" id="9XU-7W-F1V"/>
+                        <outletCollection property="letterWords" destination="CBg-5E-QbR" collectionClass="NSMutableArray" id="aP6-08-mcU"/>
+                        <outletCollection property="letterWords" destination="Er4-DK-xqh" collectionClass="NSMutableArray" id="aoO-r5-4tN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
