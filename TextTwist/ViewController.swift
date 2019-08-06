@@ -29,18 +29,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
     @IBAction func guessWords(_ sender: UITextField) {
         
         if let senderText = sender.text {
-            
-            wordCheck = gameModel.checkGuess(userGuess: senderText)
             userGuess = senderText
-            gameModel.guessedWords.insert(userGuess)
+            wordCheck = gameModel.checkGuess(userGuess: userGuess)
             
-            if wordCheck && !gameModel.isDuplicate() {
+            if wordCheck && !gameModel.isDuplicate(userGuess: userGuess) {
                 label.text = "Nice! Keep guessing."
-            
+                gameModel.guessedWords.append(userGuess)
+                
                 switch userGuess.count {
                 case 3:
                     wordBanks[0].text = wordBanks[0].text + "\n" + userGuess
@@ -53,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 default:
                     fatalError("This shouldn't happen!")
                 }
-            } else if wordCheck && gameModel.isDuplicate() {
+            } else if wordCheck && gameModel.isDuplicate(userGuess: userGuess) {
                 label.text = "You already guessed that word!"
             } else {
                 label.text = "Nope. Try again!"

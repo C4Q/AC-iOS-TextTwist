@@ -11,7 +11,7 @@ import Foundation
 class TextTwistModel {
     var userGuess = String()
     var allWords = dataModel.chooseRandomInfo()
-    var guessedWords = Set<String>()
+    var guessedWords = [String]()
     var typingLetters = String()
     
     
@@ -20,7 +20,9 @@ class TextTwistModel {
     }
     
     
-    func isDuplicate() -> Bool {
+    func isDuplicate(userGuess: String) -> Bool {
+        print(guessedWords.contains(userGuess))
+        print(guessedWords)
         return guessedWords.contains(userGuess)
     }
     
