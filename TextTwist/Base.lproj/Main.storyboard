@@ -32,6 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="checkLetters:" destination="BYZ-38-t0r" eventType="editingChanged" id="8AP-E9-rdC"/>
                                     <action selector="userInput:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="QoE-AF-buc"/>
                                 </connections>
                             </textField>
@@ -102,6 +103,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="lettersLabels" destination="e81-48-e8i" id="4tB-wH-cey"/>
                         <outlet property="userInputOut" destination="33T-HU-CZ3" id="BUD-aa-ax4"/>
                         <outletCollection property="myTextsFields" destination="gZl-Lc-DeV" collectionClass="NSMutableArray" id="RI7-u7-4Ar"/>
                         <outletCollection property="myTextsFields" destination="kde-2L-am2" collectionClass="NSMutableArray" id="q6U-Yd-WPH"/>
