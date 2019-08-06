@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
         if doesWordHaveAMatch {
             
-            if sender.text!.count == 3 {
+            if sender.text!.count == 3 && !letterWords[0].text.contains(sender.text!) {
                 letterWords[0].text.append("\(sender.text!)\n")
             }
             letterWords[1].text = "does"
