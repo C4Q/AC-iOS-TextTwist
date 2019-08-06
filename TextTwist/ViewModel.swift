@@ -1,9 +1,19 @@
-//
-//  ViewModel.swift
-//  TextTwist
-//
-//  Created by Liana Norman on 8/5/19.
-//  Copyright © 2019 C4Q . All rights reserved.
-//
-
 import Foundation
+
+class ViewModel {
+    private let wordModel: WordDataModeling?
+    private var textData: TextTwistInfo?
+    var letters: String?
+    
+    init(wordModel: WordDataModeling = WordData()) {
+        self.wordModel = wordModel
+        self.textData = wordModel.randomInfoGenerator()
+        self.letters = textData?.letters
+    }
+    
+    func getNewData() {
+            textData = wordModel?.randomInfoGenerator()
+    }
+    
+    
+}

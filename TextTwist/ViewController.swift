@@ -10,5 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var scrambledLetters: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        scrambledLetters.text = WordData.allInfo.randomElement()?.letters
+    }
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct TestTwistInfo {
+struct TextTwistInfo {
     let wordCount: Int
     let letters: String
     let words: [String]
