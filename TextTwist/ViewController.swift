@@ -19,15 +19,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var wordCheck: Bool = false
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         textField.delegate = self
         label.text = "Guess words by using the letters below:"
-        availableLettersLabel.text = availableLetters
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        availableLettersLabel.text = availableLetters
+        return true
+    }
     
     @IBAction func guessWords(_ sender: UITextField) {
         
