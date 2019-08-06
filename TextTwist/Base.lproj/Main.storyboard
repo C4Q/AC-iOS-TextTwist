@@ -94,10 +94,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="changesLabelWhileTyping:" destination="BYZ-38-t0r" eventType="editingChanged" id="ueg-Qw-w3W"/>
-                                    <action selector="guessWords:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="LDz-K3-Dvo"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.97066909069999996" green="0.88912385770000002" blue="0.66265468309999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

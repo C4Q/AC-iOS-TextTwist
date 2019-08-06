@@ -10,13 +10,12 @@ import Foundation
 
 class TextTwistModel {
     var userGuess = String()
-    var allWords = dataModel.chooseRandomInfo()
     var guessedWords = [String]()
     var typingLetters = String()
     
     
     func checkGuess(userGuess: String) -> Bool {
-        return allWords.words.contains(userGuess)
+        return currentGame.words.contains(userGuess)
     }
     
     
@@ -28,4 +27,3 @@ class TextTwistModel {
 }
 
 let gameModel = TextTwistModel()
-var availableLetters: String = gameModel.allWords.letters

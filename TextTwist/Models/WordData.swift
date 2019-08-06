@@ -21,13 +21,15 @@ class WordData {
                       words: ["swishy", "hissy","swish", "hiss","whys","wish","wiss","ywis", "his","shy","sis","why","wis"])
     ]
 
-    func chooseRandomInfo() -> TestTwistInfo {
-        let randomInfo = WordData.allInfo.randomElement()!
-        return randomInfo
+    
+    static func chooseRandomInfo() -> TestTwistInfo {
+        return WordData.allInfo.randomElement()!
     }
+    
+    
 }
 
-let dataModel = WordData()
+var currentGame = WordData.chooseRandomInfo()
 
     /*
     static let allInfo2: [TestTwistInfo] = [
