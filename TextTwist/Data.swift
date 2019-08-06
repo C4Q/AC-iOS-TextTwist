@@ -33,6 +33,7 @@ class WordData {
           return myWord
     }
 }
+let dataModel = WordData()
     /*
     static let allInfo2: [TestTwistInfo] = [
                     TestTwistInfo(wordCount: 27,
