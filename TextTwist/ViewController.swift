@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         fourWordOutlet.text = ""
         fiveWordOutlet.text = ""
         sixWordOutlet.text = ""
+        userBank = [String]()
         info = WordData.allInfo.randomElement()!
         lettersOutlet.text! = info.letters
         wordBank = info.words
@@ -52,7 +53,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    func checkWin() {
+        if userBank.sorted() == wordBank.sorted() {
+            messageOutlet.text! = "Congratulations! You guessed all the words!"
+            inputFieldOutlet.isEnabled = false
+        }
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -105,37 +111,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     threeWordOutlet.text.append("\(input)\n" )
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
-                    if userBank.sorted() == wordBank.sorted() {
-                        messageOutlet.text! = "Congratulations! You guessed all the words!"
-                        inputFieldOutlet.isEnabled = false
-                    }
+                    checkWin()
                     return true
                 } else if input.count == 4 && fourWordOutlet.text.contains(input.lowercased()) == false {
                     fourWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
-                    if userBank.sorted() == wordBank.sorted() {
-                        messageOutlet.text! = "Congratulations! You guessed all the words!"
-                        inputFieldOutlet.isEnabled = false
-                    }
+                    checkWin()
                     return true
                 } else if input.count == 5 && fiveWordOutlet.text.contains(input.lowercased()) == false {
                     fiveWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
-                    if userBank.sorted() == wordBank.sorted() {
-                        messageOutlet.text! = "Congratulations! You guessed all the words!"
-                        inputFieldOutlet.isEnabled = false
-                    }
+                    checkWin()
                     return true
                 } else if input.count == 6 && sixWordOutlet.text.contains(input.lowercased()) == false {
                     sixWordOutlet.text.append("\(input)\n ")
                     userBank.append(input)
                     messageOutlet.text = "Correct!"
-                    if userBank.sorted() == wordBank.sorted() {
-                        messageOutlet.text! = "Congratulations! You guessed all the words!"
-                        inputFieldOutlet.isEnabled = false
-                    }
+                    checkWin()
                     return true
                 }
             }
