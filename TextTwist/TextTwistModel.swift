@@ -7,6 +7,29 @@
 //
 
 import Foundation
+import UIKit
+
+
 
 class TextTwistModel {
+    
+    var randomInfo: TestTwistInfo {
+        
+       return WordData.allInfo.randomElement()!
+        
+    }
+    
+    
+    
+    func checkGuess(userGuess: String ) -> Bool {
+       return  randomInfo.words.contains(userGuess)
+        
+    }
+    
+   
+
+    
 }
+
+
+
