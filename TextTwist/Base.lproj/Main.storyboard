@@ -31,6 +31,10 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getInput:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="dHe-qD-727"/>
+                                    <action selector="triggeredByEdits:" destination="BYZ-38-t0r" eventType="editingChanged" id="72s-O6-swX"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show correct or cant use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONs-QQ-vPa">
                                 <rect key="frame" x="111" y="123" width="192" height="21"/>
@@ -104,7 +108,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="FiveLetterWords" destination="tlz-2g-9aa" id="uDk-nP-Rxy"/>
+                        <outlet property="FourLetterWords" destination="UJe-U1-ryq" id="3N5-1Y-j6n"/>
+                        <outlet property="SixLetterWords" destination="aaL-Qp-TJO" id="647-wr-iFr"/>
+                        <outlet property="ThreeLetterWords" destination="Yu6-8G-Iu6" id="RL8-pd-jxW"/>
+                        <outlet property="correctOrIncorrectGuessesLabel" destination="ONs-QQ-vPa" id="tiB-HH-Hyl"/>
                         <outlet property="lettersUsed" destination="fIw-gt-klh" id="ub3-Qj-qL0"/>
+                        <outlet property="userInput" destination="t0i-D9-vx6" id="MbO-gW-S3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
