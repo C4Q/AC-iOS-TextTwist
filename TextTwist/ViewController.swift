@@ -38,6 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if result && !gameModel.isDuplicate(userGuess: inputText) {
                 label.text = "Nice! Keep guessing."
                 gameModel.guessedWords.append(inputText)
+                print(gameModel.guessedWords)
                 addAnswerToTextView(answer: inputText)
                 
             } else if result && gameModel.isDuplicate(userGuess: inputText) {
@@ -59,7 +60,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let availLettersSet = CharacterSet(charactersIn: currentGame.letters)
         let typedCharacterSet = CharacterSet(charactersIn: string)
-        return availLettersSet.isSuperset(of: typedCharacterSet)
+        
+        
+        
+        
+        if !availLettersSet.isSuperset(of: typedCharacterSet) {
+            label.text = "You can't use \(string)!"
+            return false
+        }
+        return true
+    }
+    
+    
+    func showCantUseLetters(input: String) {
+        if !(textField != nil) {
+            label.text = "You can't use \(input)!"
+        }
     }
     
     
