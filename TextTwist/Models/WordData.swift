@@ -29,8 +29,6 @@ class WordData {
     
 }
 
-var currentGame = WordData.chooseRandomInfo()
-
     /*
     static let allInfo2: [TestTwistInfo] = [
                     TestTwistInfo(wordCount: 27,

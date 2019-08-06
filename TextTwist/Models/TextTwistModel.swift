@@ -14,7 +14,7 @@ class TextTwistModel {
     var typingLetters = String()
     
     
-    func checkGuess(userGuess: String) -> Bool {
+    func checkGuess(userGuess: String, currentGame: TestTwistInfo) -> Bool {
         return currentGame.words.contains(userGuess)
     }
     
@@ -25,5 +25,3 @@ class TextTwistModel {
     
     
 }
-
-let gameModel = TextTwistModel()

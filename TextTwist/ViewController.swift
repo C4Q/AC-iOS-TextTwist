@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var availableLettersLabel: UILabel!
     @IBOutlet var wordBanks: [UITextView]!
     
-    var availableLetters: String = currentGame.letters
+    let gameModel = TextTwistModel()
+    var currentGame = WordData.chooseRandomInfo()
     var inputText: String = ""
     var result: Bool = false
     
@@ -25,14 +26,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
         textField.delegate = self
         label.text = "Guess words by using the letters below:"
-        availableLettersLabel.text = availableLetters
+        availableLettersLabel.text = currentGame.letters
     }
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if let inputText = textField.text {
-            result = gameModel.checkGuess(userGuess: inputText)
+            result = gameModel.checkGuess(userGuess: inputText, currentGame: currentGame)
             
             if result && !gameModel.isDuplicate(userGuess: inputText) {
                 label.text = "Nice! Keep guessing."
@@ -55,11 +56,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-
-    
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let availLettersSet = CharacterSet(charactersIn: availableLetters)
+        let availLettersSet = CharacterSet(charactersIn: currentGame.letters)
         let typedCharacterSet = CharacterSet(charactersIn: string)
         return availLettersSet.isSuperset(of: typedCharacterSet)
     }
@@ -68,13 +66,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     private func addAnswerToTextView(answer: String) {
         switch answer.count {
         case 3:
-            wordBanks[0].text = wordBanks[0].text + "\n" + answer
+            wordBanks[0].text.append("\(answer)\n")
         case 4:
-            wordBanks[1].text = wordBanks[1].text + "\n" + answer
+            wordBanks[1].text.append("\(answer)\n")
         case 5:
-            wordBanks[2].text = wordBanks[2].text + "\n" + answer
+            wordBanks[2].text.append("\(answer)\n")
         case 6:
-            wordBanks[3].text = wordBanks[3].text + "\n" + answer
+            wordBanks[3].text.append("\(answer)\n")
         default:
             fatalError("This shouldn't happen!")
         }
