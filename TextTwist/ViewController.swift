@@ -56,33 +56,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 label.text = "Nope. Try again!"
             }
-            
         } else {
-            
             label.text = "Must guess a word!"
-            
         }
-        
         textField.text = ""
-        
     }
     
     
-//    func checkForErrors() {
-////only let user type letters in the letter bank
-//        let userGuessArray = Array(userGuess)
+//    @IBAction func changesLabelWhileTyping(_ sender: UITextField) {
+//        let userGuessArray = Array(sender.text!)
+//        var availLettersArray = Array(availableLetters)
 //        var lettersLeft = [String]()
 //
-//        for char in userGuessArray {
-//            if availableLetters.contains(char) {
-//
+//        for (index, char) in userGuessArray.enumerated() {
+//            if availLettersArray.contains(char) {
+//                availLettersArray.remove(at: index)
+//            } else {
+//                lettersLeft.append(String(char))
 //            }
 //        }
-//    }
-    
-    
-    
-    
-    
+//        print(lettersLeft)
+//        }
+//
+
+
 }
 

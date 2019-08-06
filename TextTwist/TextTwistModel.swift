@@ -21,8 +21,6 @@ class TextTwistModel {
     
     
     func isDuplicate(userGuess: String) -> Bool {
-        print(guessedWords.contains(userGuess))
-        print(guessedWords)
         return guessedWords.contains(userGuess)
     }
     
