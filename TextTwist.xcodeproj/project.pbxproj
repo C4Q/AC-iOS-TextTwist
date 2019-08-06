@@ -14,6 +14,7 @@
 		5475D6CA1F9ED24100AFA523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5475D6C81F9ED24100AFA523 /* LaunchScreen.storyboard */; };
 		5475D6D21F9ED25300AFA523 /* WordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5475D6D11F9ED25300AFA523 /* WordData.swift */; };
 		5475D6D41F9ED6DC00AFA523 /* TextTwistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */; };
+		EAF7B91822F9CDFB00C1C2D9 /* TestTwistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF7B91722F9CDFB00C1C2D9 /* TestTwistInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5475D6CB1F9ED24100AFA523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5475D6D11F9ED25300AFA523 /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
 		5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTwistModel.swift; sourceTree = "<group>"; };
+		EAF7B91722F9CDFB00C1C2D9 /* TestTwistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTwistInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				5475D6D51F9EDB1A00AFA523 /* Supporting Files */,
+				EAF7B91722F9CDFB00C1C2D9 /* TestTwistInfo.swift */,
 				5475D6D11F9ED25300AFA523 /* WordData.swift */,
 				5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */,
 				5475D6C11F9ED24100AFA523 /* ViewController.swift */,
@@ -154,6 +157,7 @@
 				5475D6C21F9ED24100AFA523 /* ViewController.swift in Sources */,
 				5475D6D21F9ED25300AFA523 /* WordData.swift in Sources */,
 				5475D6C01F9ED24100AFA523 /* AppDelegate.swift in Sources */,
+				EAF7B91822F9CDFB00C1C2D9 /* TestTwistInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
