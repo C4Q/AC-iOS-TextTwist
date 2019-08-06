@@ -61,21 +61,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let availLettersSet = CharacterSet(charactersIn: currentGame.letters)
         let typedCharacterSet = CharacterSet(charactersIn: string)
         
-        
+//        let textRange = Range(range)
         
         
         if !availLettersSet.isSuperset(of: typedCharacterSet) {
             label.text = "You can't use \(string)!"
             return false
         }
+        
         return true
-    }
-    
-    
-    func showCantUseLetters(input: String) {
-        if !(textField != nil) {
-            label.text = "You can't use \(input)!"
-        }
     }
     
     
