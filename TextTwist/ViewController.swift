@@ -16,17 +16,18 @@ class ViewController: UIViewController {
     
     @IBAction func guesses(_ sender: UITextField) {
         
-        for amtOfLetters in letterWords {
-            if amtOfLetters.tag == 3 {
-                amtOfLetters.text.append(sender.text!)
-            }
-        }
+        model.doesWordMatch(sender.text!)
+        print(model.threeLetterWords)
+        print(model.fourLetterWords)
+        print(model.fiveLetterWords)
+        print(model.sixLetterWords)
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(model.twistArray.words)
         guess.text = model.generateTwist().letters
     }
     

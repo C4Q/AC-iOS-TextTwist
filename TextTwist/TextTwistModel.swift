@@ -24,7 +24,9 @@ class TextTwistModel {
     }
     
     func doesWordMatch(_ word: String) -> Bool  {
+        
         if twistArray.words.contains(word) {
+            
             switch word.count {
             case 3:
                 threeLetterWords.append(word)
