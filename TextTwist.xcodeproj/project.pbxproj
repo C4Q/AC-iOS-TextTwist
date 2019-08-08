@@ -12,7 +12,7 @@
 		5475D6C51F9ED24100AFA523 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5475D6C31F9ED24100AFA523 /* Main.storyboard */; };
 		5475D6C71F9ED24100AFA523 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5475D6C61F9ED24100AFA523 /* Assets.xcassets */; };
 		5475D6CA1F9ED24100AFA523 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5475D6C81F9ED24100AFA523 /* LaunchScreen.storyboard */; };
-		5475D6D21F9ED25300AFA523 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5475D6D11F9ED25300AFA523 /* Data.swift */; };
+		5475D6D21F9ED25300AFA523 /* wordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5475D6D11F9ED25300AFA523 /* wordData.swift */; };
 		5475D6D41F9ED6DC00AFA523 /* TextTwistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		5475D6C61F9ED24100AFA523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5475D6C91F9ED24100AFA523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5475D6CB1F9ED24100AFA523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5475D6D11F9ED25300AFA523 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5475D6D11F9ED25300AFA523 /* wordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wordData.swift; sourceTree = "<group>"; };
 		5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTwistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5090C4CE22F9FDA400E86CFF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5475D6D11F9ED25300AFA523 /* wordData.swift */,
+				5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5475D6B31F9ED24100AFA523 = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +67,8 @@
 		5475D6BE1F9ED24100AFA523 /* TextTwist */ = {
 			isa = PBXGroup;
 			children = (
+				5090C4CE22F9FDA400E86CFF /* Models */,
 				5475D6D51F9EDB1A00AFA523 /* Supporting Files */,
-				5475D6D11F9ED25300AFA523 /* Data.swift */,
-				5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */,
 				5475D6C11F9ED24100AFA523 /* ViewController.swift */,
 				5475D6C31F9ED24100AFA523 /* Main.storyboard */,
 				5475D6CB1F9ED24100AFA523 /* Info.plist */,
@@ -152,7 +160,7 @@
 			files = (
 				5475D6D41F9ED6DC00AFA523 /* TextTwistModel.swift in Sources */,
 				5475D6C21F9ED24100AFA523 /* ViewController.swift in Sources */,
-				5475D6D21F9ED25300AFA523 /* Data.swift in Sources */,
+				5475D6D21F9ED25300AFA523 /* wordData.swift in Sources */,
 				5475D6C01F9ED24100AFA523 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,34 +8,48 @@
 
 import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var lettersLabels: UILabel!
-    let userStored = TextTwistModel.init()
+    let game = WordData.getRandom()
+    @IBOutlet weak var LettersLabel: UILabel!
     @IBOutlet weak var userInputOut: UITextField!
     @IBOutlet var myTextsFields: [UITextView]!
-    @IBAction func checkLetters(_ sender: UITextField) {
-        if userStored.allWords.letters.contains(sender.text!){
-        } else {
+    @IBOutlet weak var commentsLabel: UILabel!
+var wordsUsed = [String]()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if game.checkInput(word: textField.text!) && !wordsUsed.contains(textField.text!)
+        {
             
+            wordsUsed.append(textField.text!)
+            updateTable(word: textField.text!)
+            commentsLabel.text! = "yay you got it"
+            
+            return true
+        }
+            commentsLabel.text! = "oh no, its wrong"
+        return false
+    }
+    
+    
+    func updateTable (word: String){
+        if word.count == 3 {
+            print("nothing")
+            myTextsFields[0].text! +=  word + "\n"
+        } else  if word.count == 4 {
+            myTextsFields[1].text! += word + "\n"
+        }else  if word.count == 5 {
+            myTextsFields[2].text! += word + "\n"
+        }else  if word.count == 6 {
+            myTextsFields[3].text! += word + "\n"
         }
     }
-    @IBAction func userInput(_ sender: UITextField) {
-        
-        if userStored.checkInput(word: sender.text!){
-            if sender.text!.count == 3 {
-                myTextsFields[0].text += "\n" + sender.text!
-            }else  if sender.text!.count == 4 {
-                myTextsFields[1].text += "\n" + sender.text!
-            }else  if sender.text!.count == 5 {
-                myTextsFields[2].text += "\n" + sender.text!
-            }else if   sender.text!.count == 6{
-                myTextsFields[3].text += "\n" + sender.text!
-        }
-        }}
     override func viewDidLoad() {
         super.viewDidLoad()
-     userInputOut.delegate = self
-    lettersLabels.text = userStored.allWords.letters
+        LettersLabel.text = game.letters
+        userInputOut.delegate = self
     }
-
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if game.letters.contains(string) || string == "" {
+            return true
+        }
+        return false
     }
-
+}
