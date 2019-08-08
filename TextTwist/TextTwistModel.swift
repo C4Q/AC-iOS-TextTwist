@@ -13,4 +13,8 @@ struct TextTwistInfo {
     let wordCount: Int
     let letters: String
     let words: [String]
+    
+    func verifyGuess(guess: String) -> Bool {
+       return words.contains(guess)
+    }
 }
