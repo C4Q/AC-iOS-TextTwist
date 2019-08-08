@@ -73,7 +73,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="fiveLetterTextView" destination="wPO-Pk-nnF" id="JwH-8m-HQz"/>
+                        <outlet property="fourLetterTextView" destination="fzM-om-JNF" id="eV5-tf-LTx"/>
+                        <outlet property="inputTextField" destination="250-nE-U2I" id="5hl-cJ-rPK"/>
                         <outlet property="scrambledLetters" destination="3iz-pN-xLm" id="FzF-83-KM5"/>
+                        <outlet property="sixLetterTextView" destination="a2o-ad-B7Q" id="5vL-AW-439"/>
+                        <outlet property="threeLetterTextView" destination="tBg-by-qc5" id="AyQ-hJ-SBT"/>
+                        <outlet property="userGuessMessageLabel" destination="ZrY-lP-F9u" id="Zc4-Xr-Q71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
