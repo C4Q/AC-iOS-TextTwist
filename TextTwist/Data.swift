@@ -8,11 +8,8 @@
 
 import Foundation
 
-protocol WordDataModeling {
-    func randomInfoGenerator() -> TextTwistInfo
-}
 
-class WordData: WordDataModeling {
+class WordData {
     static let allInfo: [TextTwistInfo] = [
         TextTwistInfo(wordCount: 27,
                       letters: "cdenno",
@@ -25,9 +22,8 @@ class WordData: WordDataModeling {
                       words: ["swishy", "hissy","swish", "hiss","whys","wish","wiss","ywis", "his","shy","sis","why","wis"])
     ]
     
-    func randomInfoGenerator() -> TextTwistInfo {
-        guard let randomWord = WordData.allInfo.randomElement() else { return TextTwistInfo(wordCount: 0, letters: "", words: [""])}
-        return randomWord
+    static func getGameInfo() -> TextTwistInfo {
+        return WordData.allInfo.randomElement()!
     }
 }
     /*
