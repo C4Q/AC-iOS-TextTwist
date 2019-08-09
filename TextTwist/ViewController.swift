@@ -25,11 +25,56 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var fiveLetterTextView: UITextView!
     @IBOutlet weak var sixLetterTextView: UITextView!
 
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let inputText = inputTextField.text {
+            let result = currentGame?.verifyGuess(guess: inputText) ?? false
+            if result {
+                userGuessMessageLabel.text = "correct"
+                addAnswerToTextView(answer: inputText)
+            } else {
+                userGuessMessageLabel.text = "incorrect guess, never give up"
+            }
+        }
+        
+        // we are going to see if the guess is correct -> look at textfield.text
+        //base on if its correct or not
+        
+        // if true- message correct
+        // add to appropriate text view
+        
+        // how to determin which text view to put it in check word.count (see how many wordsand add or append )
+        // if the guess is incorrect, dont apdate text view with guess , do update the label - correct guess
+        print("return")
+        return true
+    }
+    
+    
     @IBOutlet weak var scrambledLetters: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrambledLetters.text = WordData.allInfo.randomElement()?.letters
+        inputTextField.delegate = self
+        currentGame = pickNewGame()
+    }
+    
+    private func pickNewGame() -> TextTwistInfo {
+        return WordData.getGameInfo()
+    }
+    
+   private func addAnswerToTextView(answer: String) {
+        switch answer.count {
+        case 3:
+            threeLetterTextView.text.append("\(answer)\n")
+        case 4:
+            fourLetterTextView.text.append("\(answer)\n")
+        case 5:
+            fiveLetterTextView.text.append("\(answer)\n")
+        case 6:
+            sixLetterTextView.text.append("\(answer)\n")
+        default:
+            print("not a word between 3 and 6 letters")
+        }
     }
 }
 
