@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             scrambledLetters.text = self.currentGame?.letters
         }
     }
+    //TODO: 
     
     @IBOutlet weak var userGuessMessageLabel: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // if the guess is incorrect, dont apdate text view with guess , do update the label - correct guess
         print("return")
         return true
+        
     }
     
     
