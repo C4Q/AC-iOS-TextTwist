@@ -24,8 +24,8 @@
 		5475D6C61F9ED24100AFA523 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5475D6C91F9ED24100AFA523 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5475D6CB1F9ED24100AFA523 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5475D6D11F9ED25300AFA523 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTwistModel.swift; sourceTree = "<group>"; };
+		5475D6D11F9ED25300AFA523 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Data.swift; path = ../Data.swift; sourceTree = "<group>"; };
+		5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextTwistModel.swift; path = ../TextTwistModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				5475D6D51F9EDB1A00AFA523 /* Supporting Files */,
-				5475D6D11F9ED25300AFA523 /* Data.swift */,
-				5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */,
+				A533387D22F9D4A500D0E29F /* models */,
 				5475D6C11F9ED24100AFA523 /* ViewController.swift */,
 				5475D6C31F9ED24100AFA523 /* Main.storyboard */,
 				5475D6CB1F9ED24100AFA523 /* Info.plist */,
@@ -76,6 +75,15 @@
 				5475D6C81F9ED24100AFA523 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A533387D22F9D4A500D0E29F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5475D6D11F9ED25300AFA523 /* Data.swift */,
+				5475D6D31F9ED6DC00AFA523 /* TextTwistModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
