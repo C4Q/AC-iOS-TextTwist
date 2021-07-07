@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TextTwist
 //
-//  Created by C4Q  on 10/23/17.
-//  Copyright © 2017 C4Q . All rights reserved.
+//  Created by EricM on 8/5/19.
+//  Copyright © 2019 EricM. All rights reserved.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
